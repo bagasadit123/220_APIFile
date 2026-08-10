@@ -14,20 +14,3 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true,
         },
-    }, {
-        tableName: "genre",
-        timestamps: true,
-    });
-
-    Genre.associate = (models) => {
-        
-        Genre.belongsToMany(models.Komik, {
-            through: "Komik_genre",
-            foreignKey: "genre_Id",
-            otherKey: "komik_Id",
-            as: "komik",
-        }); 
-    };
-
-    return Genre;
-};
