@@ -5,7 +5,7 @@ const penulisController = require('../controller/penulisController');
 const komikController = require('../controller/komikController');
 const genreController = require('../controller/genreController');
 const authMiddleware = require('../middleware/authMiddleware');
-const uploadMiddleware = require('../middleware/uploadMiddleware');
+const upload = require('../middleware/uploadMiddleware');
 
 router.post("/register", penulisController.register);
 router.post("/login", penulisController.login);
