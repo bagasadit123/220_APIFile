@@ -118,11 +118,16 @@ async function update(req, res) {
       });
     }
 
+    const gambar = req.file 
+        ? req.file.filename 
+        : null;
+
     await komik.update({
       judul,
       sinopsis,
       tahun_terbit,
-      penulis_id
+      gambar,
+      penulis_Id: penulis_id
     });
 
     if (genre_ids) {
